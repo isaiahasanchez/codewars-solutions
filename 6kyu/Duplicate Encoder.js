@@ -23,6 +23,8 @@ check to see if it appears more then once in the array
 if so replace with ()
 
 */
+
+// My Solution
 function duplicateEncode(word) {
     let split = word.split('').map(ch => ch.toLowerCase());
     let final = [];
@@ -40,3 +42,13 @@ function duplicateEncode(word) {
   
   console.log(duplicateEncode('succesS'));
   
+// Highest voted solution
+function duplicateEncode(word){
+  return word
+    .toLowerCase()
+    .split('')
+    .map( function (a, i, w) {
+      return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')'
+    })
+    .join('');
+}
