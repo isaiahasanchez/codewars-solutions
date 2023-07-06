@@ -9,17 +9,27 @@
 // isIsogram "aba" = false
 
 function isIsogram(str) {
-    let empty = [];
-    let strToArray = str.toLowerCase().split('');
+    // let empty = [];
+    // let strToArray = str.toLowerCase().split('');
   
-    for (let char of strToArray) {
-      if (empty.includes(char)) {
-        return false;
-      } else {
-        empty.push(char);
-      }
+    // for (let char of strToArray) {
+    //   if (empty.includes(char)) {
+    //     return false;
+    //   } else {
+    //     empty.push(char);
+    //   }
+    // }
+  
+    // return true;
+    let lowerCase = str.toLowerCase()
+
+    for (let ch of lowerCase){
+      if(lowerCase.indexOf(ch) !== lowerCase.lastIndexOf(ch)){
+        return false
+      } 
     }
-  
-    return true;
+    return true
   }
   
+  console.log(isIsogram('Dermatoglyphics'));
+  console.log(isIsogram('moose'));

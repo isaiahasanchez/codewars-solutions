@@ -26,19 +26,20 @@ if so replace with ()
 
 // My Solution
 function duplicateEncode(word) {
-    let split = word.split('').map(ch => ch.toLowerCase());
-    let final = [];
-  
-    for (let ch of split) {
-      if (split.indexOf(ch) === split.lastIndexOf(ch)) {
-        final.push('(');
-      } else {
-        final.push(')');
-      }
+  let lowerCase = word.toLowerCase();
+  let result = '';
+
+  for (let ch of lowerCase) {
+    if (lowerCase.indexOf(ch) === lowerCase.lastIndexOf(ch)) {
+      result += '(';
+    } else {
+      result += ')';
     }
-  
-    return final.join('');
   }
+
+  return result;
+}
+
   
   console.log(duplicateEncode('succesS'));
   
