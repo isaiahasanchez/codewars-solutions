@@ -34,7 +34,7 @@ function toCamelCase(str){
     return str
         .split(' ')
         .map((word, index, array)=>
-        index >0 ? word.slice(0,1).toUpperCase() + word.slice(1):word)
+        index <1 ? word:  word.slice(0,1).toUpperCase() + word.slice(1))
         .join('')
 }
 
